@@ -6,13 +6,12 @@ const SearchMovies = () => {
 
   const searchMovies = async (event) => {
     event.preventDefault()
-    console.log('submitting')
     const url = `https://api.themoviedb.org/3/search/movie?api_key=9b3497e64b116ccad1e4da0ff3251bf0&language=en-US&query=${query}&page=1&include_adult=false`
 
     try {
       const res = await fetch(url)
       const data = await res.json()
-      console.log(data)
+      // console.log(data)
       setMovies(data.results)
     } catch (error) {
       console.error(error)
